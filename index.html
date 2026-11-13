@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>OssBuy spreadsheet – Produktlinks, QC und Versand nach Deutschland</title>
+<meta name="description" content="OssBuy spreadsheet auf Deutsch: Kategorien entdecken, Produktlinks und Größen prüfen, Lagerfotos vergleichen und Versandkosten nach Deutschland einschätzen.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#102b38">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="OssBuy spreadsheet – Produktlinks, QC und Versand nach Deutschland">
+<meta property="og:description" content="Deutscher Einkaufsratgeber mit zehn Kategorien, einer Prüfliste für Lagerfotos und einer Übersicht der Versandkosten.">
+<!--
+index.html
+Recherche: Die direkte Google-Ergebnisseite für Deutschland war nicht abrufbar.
+Die folgenden zehn unterschiedlichen Websites stammen aus der ergänzenden Websuche.
+Die Reihenfolge belegt keine Google-Platzierung.
+ossbuyspreadsheets.org — Suchkatalog, QC und Versand
+spreadsheetossbuy.com — Bestellablauf, Gesamtkosten und FAQ
+chinagrails.com — Kategorien, Marktplatzlinks und Lagerdaten
+ossbuy-link.com — Linkprüfung, Artikelnummer und Varianten
+ossbuy-sheets.com — Kategorienavigation nach Produkttyp
+ossbuy.delivery — Streetwear-Kategorien und Kaufanleitungen
+mickeybuys.com — Agentenprofil, Gebühren und Lagerprüfung
+kakobuyus.net — Bestellablauf, Lagerprüfung und Versandoptionen
+ossbuy-spreadsheets.com — Produktgruppen und Einsteigerleitfaden
+bbd-buy.org — Linkprüfung, Lagerablauf und Rückgabe
+
+Sekundäre Suchphrasen: OssBuy Produktlinks; OssBuy Größenvergleich;
+OssBuy QC-Fotos; OssBuy Versand nach Deutschland.
+Verwandte Suchphrasen: Weidian Produktlink prüfen; Taobao Artikelnummer finden;
+1688 Produktvarianten vergleichen; Verkäuferangebot aufrufen; Modellnummer von Sneakern prüfen;
+Sneaker-Größentabelle in Zentimetern lesen; Fußlänge richtig messen; Einlegesohlenlänge vergleichen;
+Brustweite am Hoodie messen; T-Shirt-Länge vergleichen; Schulterbreite einer Jacke messen;
+Ärmellänge am Lieblingspullover messen; Innenbeinlänge für Hosen bestimmen;
+Oberteil und Hose im Set einzeln prüfen; Kopfumfang für eine Cap messen;
+Maße eines Seidentuchs vergleichen; Verschluss von Ohrringen prüfen; Schmuckmaterial beim Verkäufer prüfen;
+QC-Fotos aus dem Lager vergleichen; Größenetikett auf Lagerfotos lesen;
+Detailfotos von Nähten anfragen; falsche Farbvariante im Lager melden;
+Rückgabefrist vor Paketfreigabe prüfen; Inlandstransport in China einrechnen;
+Versandkosten aus China nach Deutschland vergleichen; Gesamtpreis in Euro überschlagen;
+Volumengewicht für Schuhkartons prüfen; Paketmaße nach dem Umpacken abfragen;
+Sendungsverfolgung nach Deutschland prüfen; mögliche Einfuhrabgaben einkalkulieren.
+-->
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f1f6f7;color:#142b36;font:1rem/1.65 system-ui,sans-serif}
+.wrap{width:min(70rem,calc(100% - 2rem));margin-inline:auto}
+header,footer{background:#102b38;color:#f3f9fa}
+header .wrap,footer .wrap{padding-block:.85rem}
+header a,footer a{color:inherit;font-weight:700}
+a{color:#09556a;text-underline-offset:.2em}
+a:focus-visible,summary:focus-visible{outline:3px solid #b55417;outline-offset:4px}
+nav{padding:1.15rem 0}
+.categories{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.45rem;list-style:none;margin:0;padding:0}
+.categories a{display:flex;align-items:center;min-height:2.75rem;height:100%;padding:.4rem .65rem;background:#fff;border:1px solid #bed4da;border-radius:.45rem;font-weight:650}
+.categories a:hover{background:#dfeff2}
+.hero{display:grid;grid-template-columns:1fr 1fr;background:#102b38;color:#fff;border-radius:1rem;overflow:hidden}
+.intro{align-self:center;padding:clamp(1.3rem,4vw,3rem)}
+h1,h2,h3{line-height:1.16}
+h1{margin:0;font-size:clamp(2.25rem,6vw,4.5rem);letter-spacing:-.055em}
+h2{margin:0 0 .8rem;font-size:clamp(1.45rem,3vw,2.15rem)}
+nav h2{font-size:1.15rem}
+h3{margin:0 0 .45rem;font-size:1.18rem}
+p{margin:.65rem 0}
+.button{display:inline-block;margin-top:.45rem;background:#f8d4aa;color:#102b38;padding:.62rem .95rem;border-radius:.45rem;font-weight:750}
+figure{margin:0;background:#fff;color:#142b36}
+img{display:block;width:100%;height:auto;object-fit:contain}
+.hero figure{display:flex;flex-direction:column;justify-content:center;background:#e6eff0}
+.hero img{aspect-ratio:3/2;object-fit:cover}
+figcaption{padding:.55rem .75rem;font-size:.87rem}
+section{margin-block:2.2rem}
+.gallery,.guides{display:grid;gap:.75rem}
+.gallery{grid-template-columns:repeat(4,minmax(0,1fr))}
+.guides{grid-template-columns:repeat(3,minmax(0,1fr))}
+.gallery figure,article,details{border:1px solid #bed4da;border-radius:.65rem;overflow:hidden;background:#fff}
+.gallery img{aspect-ratio:1;object-fit:contain}
+article,details{padding:1rem}
+details+details{margin-top:.5rem}
+summary{font-weight:700;cursor:pointer}
+details p,article p:last-child{margin-bottom:0}
+@media(max-width:760px){.categories,.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.hero,.guides{grid-template-columns:1fr}}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebPage",
+      "name":"OssBuy spreadsheet – Produktlinks, QC und Versand nach Deutschland",
+      "description":"OssBuy spreadsheet auf Deutsch: Kategorien entdecken, Produktlinks und Größen prüfen, Lagerfotos vergleichen und Versandkosten nach Deutschland einschätzen.",
+      "inLanguage":"de",
+      "about":[{"@type":"Thing","name":"Produktlinks und Größenvergleich"},{"@type":"Thing","name":"Qualitätskontrolle anhand von Lagerfotos"},{"@type":"Thing","name":"Versand nach Deutschland"}]
+    },
+    {
+      "@type":"FAQPage",
+      "inLanguage":"de",
+      "mainEntity":[
+        {"@type":"Question","name":"Was ist ein OssBuy spreadsheet?","acceptedAnswer":{"@type":"Answer","text":"Eine Übersicht, in der Käufer Produktlinks und Merkmale wie Modell, Farbe und Größe sammeln und vergleichen können."}},
+        {"@type":"Question","name":"Wohin führen die Kategorien?","acceptedAnswer":{"@type":"Answer","text":"Die zehn Kategorien öffnen die jeweiligen Katalogseiten von HipoBuyFind. Preise und Verfügbarkeit stehen beim jeweiligen Angebot."}},
+        {"@type":"Question","name":"Was zeigen QC-Fotos?","acceptedAnswer":{"@type":"Answer","text":"QC-Fotos zeigen den im Lager eingetroffenen Artikel. Je nach Aufnahme lassen sich Farbe, Etikett, Lieferumfang und sichtbare Schäden prüfen. Ein Foto allein belegt keine Echtheit."}},
+        {"@type":"Question","name":"Wie schätze ich die Versandkosten nach Deutschland?","acceptedAnswer":{"@type":"Answer","text":"Vergleiche Tarife für Deutschland mit dem Gewicht und den Außenmaßen des verpackten Pakets. Prüfe, welche Gebühren und möglichen Einfuhrabgaben im angezeigten Betrag enthalten sind."}}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/ecwsm/">
+</head>
+<body>
+<header>
+  <div class="wrap"><a href="https://www.hipobuyfind.com">HipoBuyFind-Katalog</a></div>
+</header>
+<main class="wrap">
+  <nav aria-labelledby="kategorien">
+    <h2 id="kategorien">Produktkategorien</h2>
+    <ul class="categories">
+      <li><a href="https://hipobuyfind.com/category-911-Shoes.html">Schuhe</a></li>
+      <li><a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html">Hoodies und Pullover</a></li>
+      <li><a href="https://hipobuyfind.com/category-913-T-Shirts.html">T-Shirts</a></li>
+      <li><a href="https://hipobuyfind.com/category-914-Jackets.html">Jacken</a></li>
+      <li><a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html">Hosen und Shorts</a></li>
+      <li><a href="https://hipobuyfind.com/category-916-Headwear.html">Caps und Mützen</a></li>
+      <li><a href="https://hipobuyfind.com/category-917-Sets.html">Sets</a></li>
+      <li><a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html">Unterwäsche</a></li>
+      <li><a href="https://hipobuyfind.com/category-919-Jersey.html">Trikots</a></li>
+      <li><a href="https://hipobuyfind.com/category-920-Accessories.html">Accessoires</a></li>
+    </ul>
+  </nav>
+  <div class="hero">
+    <div class="intro">
+      <h1>OssBuy spreadsheet</h1>
+      <p>Ein deutschsprachiger Einkaufsratgeber für Sneaker, Streetwear und Accessoires. Prüfe Modell und Maße am Originalangebot, gleiche die gelieferte Variante mit den Lagerfotos ab und rechne den Versand nach Deutschland mit ein.</p>
+      <a class="button" href="https://www.hipobuyfind.com">Katalog bei HipoBuyFind öffnen</a>
+    </div>
+    <figure>
+      <img src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F05%2Flouis-vuitton-nike-air-force-1-virgil-abloh-launch-exhibition-1.jpg?cbr=1&amp;fit=max&amp;q=90&amp;w=800" width="800" height="533" alt="Weiße Louis Vuitton × Nike Air Force 1 mit geprägtem Monogramm auf einer spiegelnden Fläche" loading="eager" fetchpriority="high" decoding="async">
+      <figcaption>Louis Vuitton × Nike Air Force 1 · Bildbeispiel</figcaption>
+    </figure>
+  </div>
+  <section aria-labelledby="ratgeber">
+    <h2 id="ratgeber">Vom Produktlink zur Paketfreigabe</h2>
+    <div class="guides">
+      <article>
+        <h3>Produktlink und Größe prüfen</h3>
+        <p>Öffne bei OssBuy-Produktlinks das ursprüngliche Angebot auf Weidian, Taobao oder 1688. Notiere Artikelnummer, Farbe und Größe. Prüfe bei Schuhen, ob die Tabelle Fußlänge oder Einlegesohlenlänge meint. Vergleiche bei Kleidung Brustweite, Ärmel und Länge mit einem flach ausgemessenen Kleidungsstück. Miss bei Sets Oberteil und Hose getrennt.</p>
+      </article>
+      <article>
+        <h3>OssBuy QC-Fotos abgleichen</h3>
+        <p>Vergleiche Lagerfotos mit deiner gewählten Variante. Prüfe Größenetikett, Stückzahl, Nähte und sichtbare Schäden. Bitte bei unklaren Details um eine Nahaufnahme und prüfe die geltende Rückgabefrist, solange der Artikel noch im Lager ist.</p>
+      </article>
+      <article>
+        <h3>Versand nach Deutschland kalkulieren</h3>
+        <p>Addiere Artikelpreis, Inlandstransport in China, Servicekosten, internationalen Versand und mögliche Einfuhrabgaben. Rechne die Beträge zum verwendeten Wechselkurs in Euro um. Vergleiche Versandoptionen anhand der gepackten Außenmaße und des Gewichts. Bei sperrigen Schuhkartons kann das Volumengewicht den Tarif beeinflussen.</p>
+      </article>
+    </div>
+  </section>
+  <section aria-labelledby="details">
+    <h2 id="details">Worauf es bei Jacken, Caps und Schmuck ankommt</h2>
+    <p>Die Fotos zeigen Stilbeispiele. Prüfe Jacken an Schulter, Ärmeln und Reißverschluss, Caps am Kopfumfang, Tücher an den Kanten und Ohrringe am Verschluss.</p>
+    <div class="gallery">
+      <figure>
+        <img src="https://uk.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-monogram-embossed-tracksuit-jacket--HSL62WSXD650_PM2_Front%20view.png?hei=480&amp;wid=480" width="480" height="480" alt="Blaue Louis-Vuitton-Trainingsjacke mit Reißverschluss und geprägtem Monogramm" loading="lazy" decoding="async">
+        <figcaption>Louis Vuitton · Trainingsjacke</figcaption>
+      </figure>
+      <figure>
+        <img src="https://img.komehyo.jp/contents/images/goods/4bf/2300003043065_2_b.jpg" width="480" height="480" alt="Beige Gucci-Baseballcap aus Canvas mit GG-Muster" loading="lazy" decoding="async">
+        <figcaption>Gucci · GG-Canvas-Cap</figcaption>
+      </figure>
+      <figure>
+        <img src="https://www.de.carresociety.com/cdn/shop/files/hermes-foulard-90-brides-de-gala-marine-7.jpg?v=1746997492&amp;width=480" width="480" height="480" alt="Hermès-Seidentuch Brides de Gala mit dunkelblauer Umrandung" loading="lazy" decoding="async">
+        <figcaption>Hermès · Seidentuch</figcaption>
+      </figure>
+      <figure>
+        <img src="https://assets.christiandior.com/is/image/diorprod/E0078MIDRSD301_SBG_E01-1?%24r9x10_raw%24=&amp;crop=0%2C0%2C4000%2C5000&amp;hei=520&amp;scale=1&amp;wid=480" width="480" height="520" alt="Dior-Tribales-Ohrringe aus goldfarbenem Metall mit weißen Kunstharzperlen" loading="lazy" decoding="async">
+        <figcaption>Dior · Tribales-Ohrringe</figcaption>
+      </figure>
+    </div>
+  </section>
+  <section aria-labelledby="faq">
+    <h2 id="faq">Häufige Fragen</h2>
+    <details open>
+      <summary>Was ist ein OssBuy spreadsheet?</summary>
+      <p>Eine Übersicht, in der Käufer Produktlinks und Merkmale wie Modell, Farbe und Größe sammeln und vergleichen können.</p>
+    </details>
+    <details>
+      <summary>Wohin führen die Kategorien?</summary>
+      <p>Die zehn Kategorien öffnen die jeweiligen Katalogseiten von HipoBuyFind. Preise und Verfügbarkeit stehen beim jeweiligen Angebot.</p>
+    </details>
+    <details>
+      <summary>Was zeigen QC-Fotos?</summary>
+      <p>QC-Fotos zeigen den im Lager eingetroffenen Artikel. Je nach Aufnahme lassen sich Farbe, Etikett, Lieferumfang und sichtbare Schäden prüfen. Ein Foto allein belegt keine Echtheit.</p>
+    </details>
+    <details>
+      <summary>Wie schätze ich die Versandkosten nach Deutschland?</summary>
+      <p>Vergleiche Tarife für Deutschland mit dem Gewicht und den Außenmaßen des verpackten Pakets. Prüfe, welche Gebühren und möglichen Einfuhrabgaben im angezeigten Betrag enthalten sind.</p>
+    </details>
+  </section>
+</main>
+<footer>
+  <div class="wrap">Unabhängiger Einkaufsratgeber · <a href="https://www.hipobuyfind.com">Zu HipoBuyFind</a></div>
+</footer>
+</body>
+</html>
